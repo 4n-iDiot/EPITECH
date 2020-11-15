@@ -1,0 +1,16 @@
+# poll.ingress.yaml
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: poll-ingress
+  labels:
+    app: poll
+spec:
+  rules:
+  - host: poll.dop.io
+    http:
+      paths:
+      - backend:
+          serviceName: poll
+          servicePort: 80

@@ -1,0 +1,36 @@
+# postgres.deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    app: postgres
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: postgres
+        image: postgres:12
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgres/data
+          name: vol
+        envFrom:
+        - configMapRef:
+            name: postgres-configmap
+        - secretRef:
+            name: postgres-secret
+      volumes:
+      - name: vol
+        persistentVolumeClaim:
+          claimName: volclaim

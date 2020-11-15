@@ -1,0 +1,10 @@
+# redis.configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-configmap
+  labels:
+    name: redis
+data:
+  REDIS_HOST: "host"

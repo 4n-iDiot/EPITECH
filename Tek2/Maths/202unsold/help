@@ -1,0 +1,6 @@
+USAGE
+        ./202unsold a b
+
+DESCRIPTION
+        a   constant computed from the past results
+        b   constant computed from the past results

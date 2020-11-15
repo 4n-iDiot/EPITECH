@@ -1,0 +1,20 @@
+# traefik.service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-service
+  namespace: kube-public
+  labels:
+    app: traefik
+spec:
+  selector:
+    app: traefik
+  ports:
+  - protocol: TCP
+    name: http-proxy
+    port: 30021
+  - protocol: TCP
+    name: admin-dashboard
+    port: 30042
+  type: NodePort

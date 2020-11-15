@@ -1,0 +1,10 @@
+USAGE
+            ./201yams d1 d2 d3 d4 d5 c
+
+DESCRIPTION
+            d1  value of the first die (O of not thrown)
+            d2  value of the second die (O of not thrown)
+            d3  value of the third die (O of not thrown)
+            d4  value of the fourth die (O of not thrown)
+            d5  value of the fifth die (O of not thrown)
+            c   expected combination
